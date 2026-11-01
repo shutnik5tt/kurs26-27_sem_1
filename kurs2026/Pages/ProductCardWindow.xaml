@@ -1,0 +1,39 @@
+﻿<Window x:Class="AIS_Products_UI.Pages.ProductCardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Карточка товара" Height="450" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="lblTitle" Grid.Row="0" FontSize="20" FontWeight="Bold" Margin="0,0,0,15"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock x:Name="lblArticle" Margin="0,0,20,0"/>
+            <TextBlock x:Name="lblCategory" Foreground="Gray"/>
+        </StackPanel>
+
+        <TextBlock x:Name="lblPrice" Grid.Row="2" FontSize="18" FontWeight="Bold" Foreground="DarkBlue" Margin="0,0,0,20"/>
+
+        <StackPanel Grid.Row="3">
+            <TextBlock Text="Описание:" FontWeight="Bold"/>
+            <TextBlock x:Name="lblDescription" TextWrapping="Wrap" Margin="0,5,0,10"/>
+
+            <TextBlock Text="Характеристики:" FontWeight="Bold"/>
+            <TextBlock x:Name="lblCharacteristics" TextWrapping="Wrap" Margin="0,5,0,0"/>
+        </StackPanel>
+
+        <Grid Grid.Row="4" Margin="0,20,0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBlock Text="Остаток: " FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock x:Name="lblQuantity" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,15,0"/>
+                <Button x:Name="btnUpdateStock" Content="Изменить остаток" Height="25" Click="BtnUpdateStock_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
